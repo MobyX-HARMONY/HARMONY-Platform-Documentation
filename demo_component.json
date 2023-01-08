@@ -1,0 +1,81 @@
+{
+  "name": "Demo Component",
+  "description": "Just for integration testing purposes.",
+  "modelId": "demo",
+  "versions": [
+    {
+      "versionId": "v1",
+      "versionTopicName" : "demo-v1",
+      "versionName": "Demo Version 1",
+      "versionDescription": "Demo version of December 2021",
+      "dockerContainerName": "demo-v1"
+    }
+  ],
+  "inputs": [
+    {
+      "type": "textbox",
+      "scalarType": "string",
+      "key": "title",
+      "label": "Title",
+      "description": "The title of the column in the output file.",
+      "required": true,
+      "value": "Generated number"
+    },
+    {
+      "type": "textbox",
+      "scalarType": "int",
+      "key": "multiplier",
+      "label": "Multiplier",
+      "description": "The number by which to multiply the sum of the numbers read in the input files.",
+      "required": true,
+      "value": "2"
+    },
+    {
+      "type": "dropdown",
+      "key": "count",
+      "label": "Count",
+      "description": "How many times to write the number in the output file.",
+      "options": [
+        {
+          "key": "Two",
+          "value": "TWO"
+        },
+        {
+          "key": "Four",
+          "value": "FOUR"
+        },
+        {
+          "key": "Six",
+          "value": "SIX"
+        }
+      ],
+      "required": true,
+      "value": "FOUR"
+    },
+    {
+      "type": "file",
+      "key": "firstFile",
+      "label": "First file",
+      "description": "This file contains the first number that will be added in the sum.",
+      "required": true,
+      "value": ""
+    },
+    {
+      "type": "file",
+      "key": "secondFile",
+      "label": "Second file",
+      "description": "This file contains the second number that will be added in the sum.",
+      "required": true,
+      "value": ""
+    }
+  ],
+  "outputs": [
+    {
+      "type": "file",
+      "key": "outputFile",
+      "label": "The only output file",
+      "description": "This file contains several lines with the result of the computation.",
+      "value": "outputFile.csv"
+    }
+  ]
+}
